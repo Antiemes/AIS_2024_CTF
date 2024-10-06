@@ -275,17 +275,6 @@ sensitive information in our digital world
 %Cezartol a public-keyig
 \cite{luciano1987}.
 
-Cryptography has ancient roots, dating back to antiquity. One of the most basic
-techniques is the Caesar cipher (see Fig. \ref{fig-caesar}),
-named after Julius Caesar. This method works
-by shifting each letter in the plaintext by a fixed number of positions in the
-alphabet, with the classic Caesar cipher employing a left shift of three.
-Despite its simplicity, this method laid the foundation for more advanced
-cryptographic systems. In CTF challenges, basic cryptography problems often
-begin with similar ciphers, offering an introduction to fundamental concepts
-while requiring participants to crack these basic codes through logical
-analysis and pattern recognition.
-
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.4\textwidth]{fig/caesar.png}
@@ -293,6 +282,27 @@ analysis and pattern recognition.
 	\label{fig-caesar}
 \end{figure}
 
+Cryptography has ancient roots, dating back to antiquity. One of the most basic
+techniques is the Caesar cipher (see Fig. \ref{fig-caesar}),
+named after Julius Caesar. This method works
+by shifting each letter in the plaintext by a fixed number of positions in the
+alphabet, with the classic Caesar cipher employing a left shift of three.
+Despite its simplicity, this method laid the foundation for more advanced
+cryptographic systems. In CTF challenges, basic cryptography problems often
+begin with similar (e.g. monoalphabetic) ciphers, offering an introduction
+to fundamental concepts
+while requiring participants to crack these basic codes through logical
+analysis and pattern recognition.
+It is also worth to mention base64, hexadecimal base16 and uu encodings,
+that are often used to transfer arbitrary binary data through ASCII channels.
+
+More advanced cryptography challenges often exploit vulnerabilities within
+specific algorithms or their implementations, such as flaws in key generation
+or usage. Successfully tackling these challenges requires a deep understanding
+of the mathematical principles underlying the cryptographic techniques.
+These
+advanced tasks emphasize not just the mechanics of encryption but also the
+critical importance of secure implementation in real-world applications.
 
 \subsection{Reverse Engineering}
 
