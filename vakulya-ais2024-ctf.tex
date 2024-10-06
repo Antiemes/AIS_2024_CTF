@@ -271,35 +271,31 @@ to store the bits. These slight modifications are invisible to the naked eye.
 Cryptography plays a vital role in various areas of information technology,
 ranging from password and key-based authentication to data encryption and
 integrity validation. It serves as a foundational element for securing
-sensitive information in our digital world. Steganography, often viewed as a
-precursor to cryptography, remains relevant today in modern applications. While
-traditional cryptography focuses on obscuring the content of messages,
-steganography involves concealing the very existence of the message itself.
-This technique allows arbitrary data, such as strings or files, to be hidden
-within other media, like image files, without raising suspicion .
+sensitive information in our digital world
+%Cezartol a public-keyig
+\cite{luciano1987}.
 
-Modern software tools implement steganography by manipulating the least
-significant bits (LSBs) of pixel values in an image. This method enables data
-to be embedded in a way that is imperceptible to the naked eye, as the changes
-made to the pixel values are minimal and often unnoticeable. For example,
-altering the LSB of an RGB pixel from 10101010 to 10101011 can encode a bit of
-information while preserving the original appearance of the image . The
-effectiveness and subtlety of this technique make steganography a powerful tool
-in the realm of data security and privacy, allowing users to transmit sensitive
-information discreetly.
+Cryptography has ancient roots, dating back to antiquity. One of the most basic
+techniques is the Caesar cipher (see Fig. \ref{fig-caesar}),
+named after Julius Caesar. This method works
+by shifting each letter in the plaintext by a fixed number of positions in the
+alphabet, with the classic Caesar cipher employing a left shift of three.
+Despite its simplicity, this method laid the foundation for more advanced
+cryptographic systems. In CTF challenges, basic cryptography problems often
+begin with similar ciphers, offering an introduction to fundamental concepts
+while requiring participants to crack these basic codes through logical
+analysis and pattern recognition.
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.4\textwidth]{fig/caesar.png}
-	\caption{The method of the Caesar cypher}
+	\caption{The method of the Caesar cipher}
 	\label{fig-caesar}
 \end{figure}
 
 %Steganography
 \cite{morkel2005}
 
-%Cezartol a public-keyig
-\cite{luciano1987}
 
 
 \subsection{Reverse Engineering}
@@ -331,6 +327,16 @@ information discreetly.
 \cite{stallman1988}
 
 \subsection{Forensics}
+
+Steganography is the art of hiding data without an actual encryption.
+This technique allows arbitrary data, such as strings or files, to be hidden
+within other media, like image files, without raising suspicion.
+Modern software tools implement steganography by manipulating the least
+significant bits (LSBs) of pixel values in an image. This method enables data
+to be embedded in a way that is imperceptible to the naked eye, as the changes
+made to the pixel values are minimal and often unnoticeable.
+
+
 
 \begin{figure}[htbp]
 	\centering
