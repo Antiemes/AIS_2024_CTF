@@ -52,7 +52,41 @@ cybersecurity, linux, forensics, cryptography
 
 \section{Introduction}
 
-The traditional game of capture the flag involves two teams, each tasked with
+Education is increasingly shifting from traditional classroom settings to
+virtual environments, necessitating the development of new, interactive
+modalities to capture learners' attention effectively. As technology advances,
+educational approaches must evolve to engage students more dynamically,
+leveraging tools like gamification, multimedia content, and collaborative
+platforms.
+These methods not only enhance learning experiences but also
+accommodate diverse learning styles, making education more accessible and
+effective for a wider audience.
+
+Virtual education environments
+% Berti cikkei, virtualis oktatas
+\cite{gyorok2014}
+\cite{safar2019}
+\cite{beszedes2023}
+facilitate real-time interaction between
+students and educators, promoting active participation and critical thinking.
+By integrating elements such as simulations, online discussions, and hands-on
+projects, educators can create immersive learning experiences that foster
+deeper understanding and retention of material.
+
+One crucial field that warrants focused educational efforts is cybersecurity.
+As cyber threats become more sophisticated and pervasive, it’s essential to
+equip learners with the skills and knowledge to defend against them. One
+effective and engaging approach to teaching cybersecurity is through Capture
+the Flag (CTF) challenges. These competitions provide a hands-on learning
+experience where participants solve real-world problems and exploit
+vulnerabilities in controlled environments.
+%Cybersecurity oktatas
+\cite{rahman2020}
+%Cybersecurity az egyetemen
+\cite{schneider2013}
+
+The name of CTF comes fom the traditional game of capture the flag. It
+involves two teams, each tasked with
 defending their own flag while attempting to capture the opposing team’s flag.
 In CTF challenges, however, the 'flag' typically takes the form of a hidden or
 encrypted string (such as a password), which is securely protected.
@@ -92,7 +126,8 @@ skills necessary to participate or to practice for the next competition. There a
 leaderboards to track the progress as well. As a result it becomes easy to
 enter the field of cybersecurity.
 
-Unlike traditional classroom learning, CTF challenges provide hands-on
+Unlike traditional classroom learning,
+CTF challenges provide hands-on
 experience, making learning more engaging and effective. Some challenges
 require writing a writeup, which is a document describing in detail the process
 of solving the problem. Writeups are important learning resources for people
@@ -188,40 +223,7 @@ education. This section also provides illustrative examples to demonstrate how
 each challenge type contributes to skill development and knowledge
 application."
 
-% Berti cikkei, virtualis oktatas
-\cite{gyorok2014}
-\cite{safar2019}
-\cite{beszedes2023}
 
-%Cybersecurity oktatas
-\cite{rahman2020}
-
-%Cybersecurity az egyetemen
-\cite{schneider2013}
-
-%Buffer overflow
-\cite{lhee2003}
-
-%Steganography
-\cite{morkel2005}
-
-%Cezartol a public-keyig
-\cite{luciano1987}
-
-%Wireshark forensics
-\cite{ndatinya2015}
-
-%GDB
-\cite{stallman1988}
-
-%Ghidra
-\cite{eagle2020}
-
-%IoT vulnerabilities
-\cite{butun2019}
-
-%Fault injection
-\cite{ziade2004}
 
 \section{Challenge types}
 \label{sec-challenge-types}
@@ -249,15 +251,67 @@ cybersecurity.
 
 \subsection{Web exploration}
 
+The web is one of the most ubiquitous components of the cyberworld, forming the
+backbone of countless online services and interactions. Web-related challenges
+in CTF competitions often leverage a wide range of technologies, including
+fundamental elements such as HTML, CSS, and JavaScript, along with various
+image file formats, frameworks, web servers, and communication protocols. In
+the simplest challenges, participants might find hidden data embedded in the
+source code, or they may need to deduce undisclosed file names that
+contain sensitive information. These types of challenges encourage participants
+to inspect the structure of web applications and recognize common points of
+data leakage.
+
+Other challenges explore the HTTP protocol itself, often requiring participants
+to manipulate request headers, cookies, or status codes to reveal
+vulnerabilities or extract data that would otherwise remain concealed. These
+tasks familiarize competitors with the nuances of HTTP traffic and the
+importance of understanding how data is transmitted between client and server.
+
+A third major category involves bypassing authorization mechanisms, where
+participants exploit flaws in access control or authentication processes. These
+challenges often simulate real-world vulnerabilities, such as broken
+authentication, insufficient role checks, or logic flaws that allow
+unauthorized users to access privileged information or functionalities. By
+solving these, participants gain critical skills in recognizing and preventing
+access control vulnerabilities, a common issue in web application security.
+
 \subsection{Cryptography}
+
+%Steganography
+\cite{morkel2005}
+
+%Cezartol a public-keyig
+\cite{luciano1987}
+
 
 \subsection{Reverse Engineering}
 
+%Ghidra
+\cite{eagle2020}
+
 \subsection{Binary Exploration}
+
+%Buffer overflow
+\cite{lhee2003}
+
+%GDB
+\cite{stallman1988}
 
 \subsection{Forensics}
 
+%Wireshark forensics
+\cite{ndatinya2015}
+
+
 \subsection{Miscellaneous}
+
+%IoT vulnerabilities
+\cite{butun2019}
+
+%Fault injection
+\cite{ziade2004}
+
 
 \section{Summary}
 
