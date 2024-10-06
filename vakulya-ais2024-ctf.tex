@@ -306,6 +306,30 @@ critical importance of secure implementation in real-world applications.
 
 \subsection{Reverse Engineering}
 
+The goal of reverse engineering is to understand how a program or system (such
+as a network service) operates. One classic task involves figuring out the
+specific input that will produce a given output. Reverse engineering challenges
+generally fall into three main categories.
+
+In the first category, participants are provided with the source code, which
+may or may not be obfuscated. The challenges can be written in any programming
+language (such as Python, C, JavaScript, or others). In this scenario,
+participants can modify, compile, and test the code with various inputs,
+allowing them to experiment with the program’s behavior.
+
+In the second category, only the binary of the program is provided. Tools like
+Ghidra
+%Ghidra
+\cite{eagle2020}
+are particularly useful for these challenges, as they can decompile
+binaries into a pseudo C-like code for analysis (see Fig. \ref{fig-ghidra}).
+After performing static
+analysis, participants can reorganize the generated code, rename automatically
+assigned function and variable names, and deduce the program's internal
+operations. This process helps them understand how the binary works and
+identify potential ways to manipulate or exploit it.
+
+
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.4\textwidth]{fig/ghidra.png}
@@ -313,8 +337,12 @@ critical importance of secure implementation in real-world applications.
 	\label{fig-ghidra}
 \end{figure}
 
-%Ghidra
-\cite{eagle2020}
+The third category involves black-box analysis, where neither the source code
+nor the binary is provided. Instead, the program is typically accessible
+through a network connection. Participants must deduce the program's internal
+workings by systematically providing different inputs and observing the
+outputs, uncovering vulnerabilities or hidden functionalities purely through
+external interaction.
 
 \subsection{Binary Exploration}
 
@@ -325,15 +353,55 @@ critical importance of secure implementation in real-world applications.
 	\label{fig-gdb}
 \end{figure}
 
-
+Binary exploitation is a classic technique used to create exploits for binary
+programs, i.e. to give a specially crafted input, that redirects the flow
+of the program to call a given function, or execute an attacker code.
+In these challenges, participants analyze executable files to
+identify vulnerabilities such as stack or buffer overflows
 %Buffer overflow
 \cite{lhee2003}
+or format string
+vulnerabilities.
+Modern compilers and operating systems implement various countermeasures,
+including stack canaries and address space layout randomization (ASLR), which,
+in case of particular challenges,
+must also be bypassed to successfully exploit the program. To aid participants, some
+challenges also provide the program’s source code, offering additional insight
+into the vulnerability.
 
+Solving these types of challenges typically requires running the program
+step-by-step, inspecting variables, and examining the state of the stack and
+registers during execution. One of the most powerful tools for this process is
+the GNU Debugger (GDB)
 %GDB
-\cite{stallman1988}
+\cite{stallman1988},
+which allows participants to perform detailed analysis and manipulation of
+the program during runtime. By using GDB, participants can gain a better
+understanding of how the binary operates, identify critical points of
+exploitation, and craft effective payloads to take control of the program.
+Fig. \ref{fig-gdb} shows a screenshot of GDB after partially disassembling
+the main function of the investigated binary executable.
 
 \subsection{Forensics}
 
+Similar to real world (digital) forensyscs, when, during an investigation,
+the seized IT equipment must be analyzed to find evidence. The usually
+asked questions: Was this file (content) present on a storage device?
+Was some file deleted? What is the real date of a file? Who is the real sender
+of an e-mail? Was this file transferred from this to that computer?
+
+Filesystem, or complete storage media image, which contain the state of the system at a particular
+time. Can be booted, but this data is extremely fragile and the live system
+can destroy the traces / evidences. Important to investigate the system without
+modifying it. Hidden partition, deleted file.
+
+Another possible task is to analyze network traffic. Understand network
+protocols. Wireshark.
+
+Sometimes only a few files (e.g. a webpage) must be analyzed. Metadata,
+digital signatures.
+
+Another possible forensics problem can be connected to steganography.
 Steganography is the art of hiding data without an actual encryption.
 This technique allows arbitrary data, such as strings or files, to be hidden
 within other media, like image files, without raising suspicion.
@@ -361,6 +429,24 @@ made to the pixel values are minimal and often unnoticeable.
 
 
 \subsection{Miscellaneous}
+
+Misc, which does not fit anywhere else.
+The problem can be connected to file formats. To fix the corrupted file (e.g. the file header)
+to display it.
+
+Many file formats allow parts in them, which are not executed, or displayed. This opens
+the possibility to hide data or another file. Important to detect the signs (e.g. the
+magic bytes) of particular files.
+
+Binwalk is a good tool to automatically analyze and extract files, but sometimes it is
+not able to identify the contents.
+
+Polyglot can be interpreted as different files, e.g. pdf and png with different
+content.
+
+A special subject is IoT and embedded security. There, besides the mentioned
+types, another, special vulnerabilities are exists. Power analysis / side channel
+attack, fault injection.
 
 %IoT vulnerabilities
 \cite{butun2019}
