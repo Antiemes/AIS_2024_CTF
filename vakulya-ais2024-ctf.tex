@@ -224,20 +224,6 @@ between 2015 and 2018.
 %each challenge type contributes to skill development and knowledge
 %application."
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.4\textwidth]{fig/gdb.png}
-	\caption{Disassembling a binary function in GDB}
-	\label{fig-gdb}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.5\textwidth]{fig/wireshark.png}
-	\caption{Analyzing network traffic with Wireshark}
-	\label{fig-wireshark}
-\end{figure}
-
 \section{Challenge categories}
 \label{sec-challenge-types}
 
@@ -275,6 +261,40 @@ access control vulnerabilities, a common issue in web application security.
 
 \subsection{Cryptography}
 
+Cryptography is used in many fields of IT from password or key based authentication
+to data encryption and validation. Steganography can be considered to be the
+predecessor of cryptography, but it lives today in a modern form. With software
+tools arbitrary data (e.g. a string or a data file) can be hidden in an image file.
+Technically, these programs usually use the least significant bits of the pixels
+to store the bits. These slight modifications are invisible to the naked eye.
+
+Cryptography plays a vital role in various areas of information technology,
+ranging from password and key-based authentication to data encryption and
+integrity validation. It serves as a foundational element for securing
+sensitive information in our digital world. Steganography, often viewed as a
+precursor to cryptography, remains relevant today in modern applications. While
+traditional cryptography focuses on obscuring the content of messages,
+steganography involves concealing the very existence of the message itself.
+This technique allows arbitrary data, such as strings or files, to be hidden
+within other media, like image files, without raising suspicion .
+
+Modern software tools implement steganography by manipulating the least
+significant bits (LSBs) of pixel values in an image. This method enables data
+to be embedded in a way that is imperceptible to the naked eye, as the changes
+made to the pixel values are minimal and often unnoticeable. For example,
+altering the LSB of an RGB pixel from 10101010 to 10101011 can encode a bit of
+information while preserving the original appearance of the image . The
+effectiveness and subtlety of this technique make steganography a powerful tool
+in the realm of data security and privacy, allowing users to transmit sensitive
+information discreetly.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.4\textwidth]{fig/caesar.png}
+	\caption{The method of the Caesar cypher}
+	\label{fig-caesar}
+\end{figure}
+
 %Steganography
 \cite{morkel2005}
 
@@ -284,10 +304,25 @@ access control vulnerabilities, a common issue in web application security.
 
 \subsection{Reverse Engineering}
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.4\textwidth]{fig/ghidra.png}
+	\caption{Reverse engineering a binary file with Ghidra}
+	\label{fig-ghidra}
+\end{figure}
+
 %Ghidra
 \cite{eagle2020}
 
 \subsection{Binary Exploration}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.4\textwidth]{fig/gdb.png}
+	\caption{Disassembling a binary function in GDB}
+	\label{fig-gdb}
+\end{figure}
+
 
 %Buffer overflow
 \cite{lhee2003}
@@ -296,6 +331,14 @@ access control vulnerabilities, a common issue in web application security.
 \cite{stallman1988}
 
 \subsection{Forensics}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fig/wireshark.png}
+	\caption{Analyzing network traffic with Wireshark}
+	\label{fig-wireshark}
+\end{figure}
+
 
 %Wireshark forensics
 \cite{ndatinya2015}
