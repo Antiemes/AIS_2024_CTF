@@ -384,22 +384,37 @@ the main function of the investigated binary executable.
 
 \subsection{Forensics}
 
-Similar to real world (digital) forensyscs, when, during an investigation,
-the seized IT equipment must be analyzed to find evidence. The usually
-asked questions: Was this file (content) present on a storage device?
-Was some file deleted? What is the real date of a file? Who is the real sender
-of an e-mail? Was this file transferred from this to that computer?
+In real-world digital forensics, investigators analyze seized IT
+equipment for evidence
+with uncovering critical information from digital artifacts.
+Common investigative questions include: Was this particular file or content
+present on a storage device? Has a file been deleted or altered? What is the
+true creation or modification date of a file? Who is the genuine sender of a
+suspicious email? And, was a file transferred from one system to another?
 
-Filesystem, or complete storage media image, which contain the state of the system at a particular
-time. Can be booted, but this data is extremely fragile and the live system
-can destroy the traces / evidences. Important to investigate the system without
-modifying it. Hidden partition, deleted file.
+To be able to answer these questions investigators use digital forensics techniques,
+such as tracking digital
+footprints, uncovering metadata, and retrieving deleted data. They often
+examine logs, metadata, file systems, and network traffic.
+CTF challenges in the Forensics category ask similar questions.
 
-Another possible task is to analyze network traffic. Understand network
-protocols. Wireshark.
+One of the typical challenges in this CTF category involves analyzing a
+filesystem or a complete storage media image to uncover hidden or deleted data.
+These images capture the state of the system at a specific point in time.
+This data is extremely
+fragile, e.g. booting from the media and interacting with the live system or
+even mounting the filesystem can inadvertently destroy crucial
+traces or evidence.
+Key investigative targets in these cases include uncovering hidden partitions,
+recovering deleted files or damaged filesystems, and analyzing metadata that might reveal crucial
+details about the system's activity.
 
-Sometimes only a few files (e.g. a webpage) must be analyzed. Metadata,
-digital signatures.
+Sometimes, only a few files, such as a webpage or document, need to be analyzed
+in a forensic challenge. In these cases, the focus is often on examining
+metadata—hidden information embedded within files that can reveal details like
+creation dates, modification history, and the tools used to generate the
+content. Additionally, digital signatures may provide important clues,
+confirming the authenticity of a file or identifying tampering.
 
 Another possible forensics problem can be connected to steganography.
 Steganography is the art of hiding data without an actual encryption.
@@ -409,12 +424,8 @@ Modern software tools implement steganography by manipulating the least
 significant bits (LSBs) of pixel values in an image. This method enables data
 to be embedded in a way that is imperceptible to the naked eye, as the changes
 made to the pixel values are minimal and often unnoticeable.
-
-
 %Steganography
 \cite{morkel2005}
-
-
 
 \begin{figure}[htbp]
 	\centering
@@ -423,9 +434,25 @@ made to the pixel values are minimal and often unnoticeable.
 	\label{fig-wireshark}
 \end{figure}
 
+A common task in forensics challenges involves analyzing previously captured
+network traffic. These challenges require participants to dive into packet
+captures (PCAP files) and interpret network communication data.
+Understanding network
+protocols such as TCP, UDP, HTTP, DNS, and others is essential for decoding the
+traffic.
 
+Tools like Wireshark
 %Wireshark forensics
 \cite{ndatinya2015}
+play a crucial role in this process. Wireshark allows
+participants to inspect individual packets, filter traffic by protocol or
+source, and even reconstruct data streams. By using this tool, participants can
+trace the steps of an attacker, find hidden messages, or uncover vulnerable
+data transmission. Mastering this skillset not only aids in solving CTF
+challenges but also mirrors the real-world practices of network forensics and
+incident response, where analyzing network traffic is critical for detecting
+and responding to cyber threats.
+
 
 
 \subsection{Miscellaneous}
