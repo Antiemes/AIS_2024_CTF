@@ -235,7 +235,8 @@ cybersecurity.
 \subsection{Web exploration}
 
 The web is one of the most ubiquitous components of the cyberworld, forming the
-backbone of countless online services and interactions. Web-related challenges
+backbone of countless online services and interactions \cite{calzavara2017}.
+Web-related challenges
 in CTF competitions often leverage a wide range of technologies, including
 fundamental elements such as HTML, CSS, and JavaScript, along with various
 image file formats, frameworks, web servers, and communication protocols. In
@@ -456,34 +457,64 @@ challenges but also mirrors the real-world practices of network forensics and
 incident response, where analyzing network traffic is critical for detecting
 and responding to cyber threats.
 
-
-
 \subsection{Miscellaneous}
 
-Misc, which does not fit anywhere else.
-The problem can be connected to file formats. To fix the corrupted file (e.g. the file header)
-to display it.
+Miscellaneous challenges in CTFs often encompass problems that don't neatly fit
+into standard categories.
+These tasks can be diverse and unpredictable, here will follow some examples, without
+the need for completeness. 
 
-Many file formats allow parts in them, which are not executed, or displayed. This opens
-the possibility to hide data or another file. Important to detect the signs (e.g. the
-magic bytes) of particular files.
+Some challenges involve
+working with file formats. Participants may be tasked with repairing or
+modifying corrupted files, such as fixing a broken file header to make the file
+readable or restorable again. This can include anything from image formats like
+PNG or JPEG, 
+Solving such problems requires an understanding of the specific file format’s
+structure and how the data is organized within it. Tools like hex editors can
+be useful in these challenges, as they allow participants to manually inspect
+and edit the raw bytes of a file.
 
-Binwalk is a good tool to automatically analyze and extract files, but sometimes it is
-not able to identify the contents.
+Many file formats allow for sections that are not directly executed or
+displayed, creating opportunities to hide additional data or even other files
+within them. To detect these concealed data,
+it is essential to recognize key indicators, such as magic bytes—specific
+sequences of bytes that act as unique identifiers for particular file types.
 
-Polyglot can be interpreted as different files, e.g. pdf and png with different
-content.
+Binwalk is a powerful tool widely used for automatically analyzing and
+extracting files from a variety of binary data formats. It excels at detecting
+embedded file signatures, such as compressed archives or hidden files, and
+extracting them for further investigation. Its efficiency in identifying these
+patterns makes it a popular choice in many CTF challenges and forensic
+investigations.
 
-A special subject is IoT and embedded security. There, besides the mentioned
-types, another, special vulnerabilities are exists. Power analysis / side channel
-attack, fault injection.
+A special case of such embedding is a polyglot file, which is a single
+file that can be interpreted as multiple different
+file types, such as both a PDF and a PNG, each containing distinct content
+depending on how the file is opened. This dual or multi-interpretation is
+possible because polyglot files exploit the structure and format of different
+file types to store more than one set of data within the same file.
 
+A special subject within cybersecurity is IoT (Internet of Things) and embedded
+security, where unique vulnerabilities arise that are not typically found in
+traditional computing environments. In addition to the common threats IoT
+devices are susceptible to
+specialized attacks such as fault injection and power analysis
 %IoT vulnerabilities
-\cite{butun2019}
+\cite{butun2019}.
 
+Fault injection is typically done by cutting the power supply for very short
+times, or injecting specially formed clock pulses, making the CPU to skip instructions.
+With suck a pulse in the right time, security checks can be bypassed
 %Fault injection
-\cite{ziade2004}
+\cite{ziade2004}.
 
+Power analysis involves monitoring the power consumption of a device while it
+processes cryptographic operations. Attackers can extract sensitive
+information, such as encryption keys, by analyzing variations in power usage
+during specific computations.
+
+These scenarios can only be implemented in a low-level environment, 
+and usually a part of a hardware dedicated CTF event.
 
 \section{Summary}
 
