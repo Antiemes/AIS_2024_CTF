@@ -247,11 +247,19 @@ contain sensitive information. These types of challenges encourage participants
 to inspect the structure of web applications and recognize common points of
 data leakage.
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.4\textwidth]{fig/headers.png}
+	\caption{Request header of an example HTTP request.}
+	\label{fig-headers}
+\end{figure}
+
 Other challenges explore the HTTP protocol itself, often requiring participants
 to manipulate request headers, cookies, or status codes to reveal
 vulnerabilities or extract data that would otherwise remain concealed. These
 tasks familiarize competitors with the nuances of HTTP traffic and the
 importance of understanding how data is transmitted between client and server.
+Fig. \ref{headers} shows an example HTTP request header.
 
 A third major category involves bypassing authorization mechanisms, where
 participants exploit flaws in access control or authentication processes. These
