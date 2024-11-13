@@ -1,0 +1,304 @@
+\documentclass[12 pt]{beamer}
+\usetheme[
+	bullet=circle,		% Other option: square
+	bigpagenumber,		% circled page number on lower right
+	topline=true,			% colored bar at the top of the frame 
+	shadow=false,			% Shading for beamer blocks
+	watermark=BG_lower,	% png file for the watermark
+	]{Flip}
+
+
+\newcommand{\titleimage}{title}			% Custom title 
+\newcommand{\tanedo}{tanedolight}		% Custom author name
+\newcommand{\CMSSMDM}{CMSSMDMlight.png}	% light background plot
+
+
+%%%%%%%%%%
+% FONTS %
+%%%%%%%%%%
+
+\usepackage[T1]{fontenc}
+%\usepackage{lmodern}		
+%\usepackage{sfmath}		% Sans Serif Math, off by default
+
+%% Protects fonts from Beamer screwing with them
+%% http://tex.stackexchange.com/questions/10488/force-computer-modern-in-math-mode
+\usefonttheme{professionalfonts}
+
+
+\usepackage[no-math]{fontspec}		
+
+%\defaultfontfeatures{Mapping=tex-text}	% This seems to be important for mapping glyphs properly
+
+\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+\usepackage{mathspec}
+\usepackage{graphicx}
+%\usepackage{mathrsfs} 			% For Weinberg-esque letters
+\usepackage{cancel}				% For "SUSY-breaking" symbol
+\usepackage{slashed}            % for slashed characters in math mode
+%\usepackage{bbm}                % for \mathbbm{1} (unit matrix)
+\usepackage{amsthm}				% For theorem environment
+\usepackage{multirow}			% For multi row cells in table
+\usepackage{arydshln} 			% For dashed lines in arrays and tables
+\usepackage{tikzfeynman}		% For Feynman diagrams
+% \usepackage{subfig}           % for sub figures
+% \usepackage{young}			% For Young Tableaux
+% \usepackage{xspace}			% For spacing after commands
+% \usepackage{wrapfig}			% for Text wrap around figures
+% \usepackage{framed}
+
+\setsansfont{calibri}[ 
+Extension = .ttf,
+UprightFont = *,
+BoldFont = *b,
+ItalicFont = *i,
+Scale = 1
+]
+
+\setmathfont(Digits,Latin,Greek){SitkaI.ttc}
+
+\graphicspath{{images/}}	% Put all images in this directory. Avoids clutter.
+
+
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{mindmap,trees}	% For mind map
+% http://www.texample.net/tikz/examples/computer-science-mindmap/
+
+
+% SOME COMMANDS THAT I FIND HANDY
+% \renewcommand{\tilde}{\widetilde} % dinky tildes look silly, dosn't work with fontspec
+\newcommand{\comment}[1]{\textcolor{comment}{\footnotesize{#1}\normalsize}} % comment mild
+\newcommand{\Comment}[1]{\textcolor{Comment}{\footnotesize{#1}\normalsize}} % comment bold
+\newcommand{\COMMENT}[1]{\textcolor{COMMENT}{\footnotesize{#1}\normalsize}} % comment crazy bold
+\newcommand{\Alert}[1]{\textcolor{Alert}{#1}} % louder alert
+\newcommand{\ALERT}[1]{\textcolor{ALERT}{#1}} % loudest alert
+%% "\alert" is already a beamer pre-defined
+
+
+
+\author{Gergely Vakulya and Helga Anna Albert-Huszár}
+\title{Gamifying Cybersecurity:\\The CTF Challenges}
+\institute{}
+\date{}
+
+
+
+\begin{document}
+
+%% To use external nodes; http://www.texample.net/tikz/examples/beamer-arrows/
+\tikzstyle{every picture}+=[remember picture]
+
+{
+\setbeamertemplate{sidebar right}{\llap{\includegraphics[width=\paperwidth,height=\paperheight]{backgnd}}}
+
+\begin{frame}[c]
+\begin{center}
+	% \includegraphics[width=7cm]{WarpedPenguinsReturn}
+
+  \Large
+  \textbf{Gamifying Cybersecurity:}
+
+  \textbf{The CTF Challenges}
+
+  \qquad
+  
+  \textit{Gergely Vakulya\\and\\Helga Anna Albert-Huszár}
+  
+  \qquad
+
+  AIS 2024
+  
+
+	%\begin{tikzpicture}%[show background grid] %% Use grid for positioning, then turn off
+	%	\node[inner sep=0pt,above right] (title) 
+	%		{ \includegraphics[width=7cm]{\titleimage} };
+	%	% \node (title) at (1.5,1.5) {};
+	%\end{tikzpicture}
+	%\quad
+
+	% \includegraphics[width=7cm]{\titleimage} 
+	
+	%\vspace{1em}
+	%\footnotesize\textcolor{gray}{Journal of Cool Beans
+	%\texttt{[arXiv:1234.5678]}}
+	%\vspace{.5em}
+	
+	%\includegraphics[height=1.5cm]{\tanedo} \quad
+	 % {\fontspec{Zapfino} Flip Tanedo} \quad
+	% \includegraphics[height=1cm]{FlipSansSerif} \quad
+	%\includegraphics[height=1.5cm]{CUasym}\\
+	% \footnotesize\textcolor{gray}{In collaboration with} Csaba Cs\'aki\textcolor{gray}{,} Yuval Grossman\textcolor{gray}{, and} Yuhsin Tsai\normalsize\\
+	%	\footnotesize\textcolor{gray}{In collaboration with 
+%		D. Grayson, J. Todd, T. Drake, S. Brown, D. Wayne}\normalsize\\
+%	\textcolor{normal text.fg!50!Comment}{\textit{Gotham University}, \today}
+	% \textcolor{Comment}{ \;($\pi$ day)}\\
+	% \Comment{4 February 2011}
+\end{center}
+\end{frame}
+}
+
+%------------------------------------------------
+
+%\setbeamertemplate{default}{}
+
+\begin{frame}{Cybersecurity education}
+
+  \begin{block}{Main targets}
+    \begin{itemize}
+        \item{Secure software development}
+        \item{Understanding network protocols}
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Problems to be solved}
+    \begin{itemize}
+        \item{New generation: New education methods}
+          \begin{itemize}
+            \item{Gamification}
+            \item{Challenges, learning by doing}
+            \item{Immediate feedback and rewarding}
+          \end{itemize}
+        \item{}
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{CTF: Capture The Flag}
+
+  \begin{block}{Origins}
+    \begin{itemize}
+      \item{Name: From the well-known children's game}
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Flag}
+    \begin{itemize}
+        \item{A hidden and / or protected file}
+        \item{}
+    \end{itemize}
+  \end{block}
+  
+  \begin{block}{Challenge}
+    \begin{itemize}
+        \item{}
+        \item{}
+    \end{itemize}
+  \end{block}
+  
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{CTF events}
+
+  \begin{block}{Origins}
+    \begin{itemize}
+      \item{Name: From the well-known children's game}
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Flag}
+    \begin{itemize}
+        \item{A hidden and / or protected file}
+        \item{}
+    \end{itemize}
+  \end{block}
+  
+  \begin{block}{Challenge}
+    \begin{itemize}
+        \item{}
+        \item{}
+    \end{itemize}
+  \end{block}
+  
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{CTF cagetories}
+
+    \begin{itemize}
+      \item{Cryptography}
+
+      \bigskip
+
+      \item{Web exploration}
+
+      \bigskip
+
+      \item{Reverse engineering}
+
+      \bigskip
+
+      \item{Binary exploitation}
+
+      \bigskip
+
+      \item{Forensics}
+
+      \bigskip
+
+      \item{Misc / General skills}
+    \end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Cryptography}
+
+  \begin{itemize}
+    \item{Cryptography is used for }
+    \item{Origins of cryptography go way back before IT}
+    \item{Cryptography is mathematically well founded, but mis-use is easy}
+    \item{Technically: Hash algorithms, key derivation standards, symmetric and public key encryptions}
+    \item{Easy challenges: Caesar and monoalphabetic codes, BASE64, hexadecimal encodings}
+    \item{Difficult level: Recognision of mis-uses, implementation issues. Many challenges need mathematical level understanding.}
+  \end{itemize}
+
+  \begin{exampleblock}{}
+    Main benefit: 
+  \end{exampleblock}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Web exploration}
+
+  \begin{itemize}
+    \item{Web is the most ubiquitous element of the cyberworld}
+    \item{Information fragments in the HTTP, CSS or JavaScript files}
+    \item{Deduction of possible unexposed files}
+    \item{Cookie manipulation}
+    \item{Protocol level mechanisms}
+    \item{Exploitation of web languages (e.g. PHP)}
+  \end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Reverse engineering}
+
+  \begin{itemize}
+    \item{Web is the most ubiquitous element of the cyberworld}
+  \end{itemize}
+
+  \begin{exampleblock}{}
+    Main benefit: Understanding 
+  \end{exampleblock}
+
+\end{frame}
+
+%------------------------------------------------
+
+\end{document}
+
